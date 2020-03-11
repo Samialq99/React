@@ -1,9 +1,8 @@
-
 class ProductList extends React.Component {
   render() {
     const product = Seed.products[0];
     return (
-      <div className='ui unstackable items'>
+      <div className="ui unstackable items">
         <Product
           id={product.id}
           title={product.title}
@@ -17,33 +16,33 @@ class ProductList extends React.Component {
     );
   }
 }
+//Here, the product variable is set to a JavaScript object that describes the first of our products.
+// We pass the product’s attributes along individually to the Product component using the syntax
+// [propName]=[propValue]. The syntax of assigning attributes in JSX is exactly the same as HTML
+// and XML.
 
 class Product extends React.Component {
   render() {
     return (
-      <div className='item'>
-        <div className='image'>
+      <div className="item">
+        <div className="image">
           <img src={this.props.productImageUrl} />
         </div>
-        <div className='middle aligned content'>
-          <div className='header'>
+        <div className="middle aligned content">
+          <div className="header">
             <a>
-              <i className='large caret up icon' />
+              <i className="large caret up icon" />
             </a>
             {this.props.votes}
           </div>
-          <div className='description'>
-            <a href={this.props.url}>
-              {this.props.title}
-            </a>
-            <p>
-              {this.props.description}
-            </p>
+          <div className="description">
+            <a href={this.props.url}>{this.props.title}</a>
+            <p>{this.props.description}</p>
           </div>
-          <div className='extra'>
+          <div className="extra">
             <span>Submitted by:</span>
             <img
-              className='ui avatar image'
+              className="ui avatar image"
               src={this.props.submitterAvatarUrl}
             />
           </div>
@@ -53,7 +52,4 @@ class Product extends React.Component {
   }
 }
 
-ReactDOM.render(
-  <ProductList />,
-  document.getElementById('content')
-);
+ReactDOM.render(<ProductList />, document.getElementById("content"));
